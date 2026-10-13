@@ -6,6 +6,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
+use App\Helpers\EstadoIdea;
 
 class IdeaForm
 {
@@ -14,13 +15,19 @@ class IdeaForm
         return $schema
             ->components([
                 TextInput::make('titulo')
+                    ->label('Titulo de la idea')
+                    ->helperText('Escribe un título que sea breve e ilustrativo')
+                    ->placeholder('Ej Aplicación de comida')
                     ->required(),
                 Textarea::make('descripcion')
+                    ->label('Describe tu idea')
+                    ->helperText('Describe a detalle en que consite la idea del proyecto')
                     ->required()
                     ->columnSpanFull(),
-                TextInput::make('estado')
+                Select::make('estado')
                     ->required()
-                    ->default('registrada'),
+                    ->options(EstadoIdea::opciones())
+                    ->default('Registrada'),
                 TextInput::make('autor')
                     ->required(),
                 Select::make('categoria_id')

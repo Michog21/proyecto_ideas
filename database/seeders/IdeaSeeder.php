@@ -9,16 +9,14 @@ class IdeaSeeder extends Seeder
         Idea::firstOrCreate([ 
             'titulo' => 'Aplicación para organizar citas 
             veterinarias', 
-            'descripcion' => 'Sistema para registrar y organizar 
-            citas de mascotas.', 
+            'descripcion' => 'Sistema para registrar y organizar citas de mascotas.', 
             'estado' => 'registrada', 
             'autor' => 'Jose', 
             'categoria_id' => 1 
         ]); 
         Idea::firstOrCreate([ 
             'titulo' => 'Plataforma para cursos en línea', 
-            'descripcion' => 'Sistema para ofrecer cursos y 
-            materiales educativos.', 
+            'descripcion' => 'Sistema para ofrecer cursos y materiales educativos.', 
             'estado' => 'en revisión', 
             'autor' => 'Pedro', 
             'categoria_id' => 2 
