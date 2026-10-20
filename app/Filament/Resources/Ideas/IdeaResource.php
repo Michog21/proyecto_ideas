@@ -6,6 +6,7 @@ use App\Filament\Resources\Ideas\Pages\CreateIdea;
 use App\Filament\Resources\Ideas\Pages\EditIdea;
 use App\Filament\Resources\Ideas\Pages\ListIdeas;
 use App\Filament\Resources\Ideas\Schemas\IdeaForm;
+use App\Filament\Resources\Ideas\Schemas\IdeaInfolist;
 use App\Filament\Resources\Ideas\Tables\IdeasTable;
 use App\Models\Idea;
 use BackedEnum;
@@ -26,6 +27,12 @@ class IdeaResource extends Resource
     {
         return IdeaForm::configure($schema);
     }
+
+    public static function infolist(Schema $schema): Schema
+    {
+        return IdeaInfolist::configure($schema);
+    }
+
 
     public static function table(Table $table): Table
     {
