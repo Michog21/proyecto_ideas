@@ -14,7 +14,8 @@ protected $fillable = [
 'descripcion', 
 'estado', 
 'autor', 
-'categoria_id' 
+'categoria_id', 
+'observacion'
 ]; 
 
 public function categoria(): BelongsTo 
