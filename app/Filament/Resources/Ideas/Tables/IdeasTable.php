@@ -19,6 +19,7 @@ use Filament\Actions\Action;
 use App\Models\Idea;
 use Filament\Notifications\Notification;
 use Filament\Forms\Components\Textarea;
+use Filament\Support\Icons\Heroicon;
 
 
 
@@ -83,13 +84,15 @@ public static function configure(Table $table): Table
             
             Action::make('aprobar')
                 ->label('Aprobar')
+                ->icon(Heroicon::HandThumbUp)
                 ->color('success')
                 ->requiresConfirmation()
                 ->modalheading('Aprobación')
                 ->modaldescription('¿Deseas aprobar esta idea?')
                 ->action(function(Idea $record) {
                     $record->update([
-                        'estado' => 'aprobada'
+                        'estado' => 'aprobada',
+                        'observacion' => null,
                     ]);
                     Notification::make()
                         ->title('Idea aprobada correctamente')
@@ -100,6 +103,7 @@ public static function configure(Table $table): Table
                 
             Action::make('rechazar')
                 ->label('Rechazar')
+                ->icon(Heroicon::HandThumbDown)
                 ->color('danger')
                 ->schema([
                     Textarea::make('observacion')
@@ -117,7 +121,7 @@ public static function configure(Table $table): Table
                         ->success()
                         ->send();
                 }) 
-                ->hidden(fn ($record) => $record->estado === 'Rechazada'), 
+                ->visible(fn(Idea $record) => $record->estado !== 'rechazada'),
         ])
         ->toolbarActions([
             BulkActionGroup::make([
