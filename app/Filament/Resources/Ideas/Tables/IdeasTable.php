@@ -123,6 +123,8 @@ public static function configure(Table $table): Table
                 }) 
                 ->visible(fn(Idea $record) => $record->estado !== 'rechazada'),
         ])
+        ->recordUrl(null)
+        ->recordAction(null)
         ->toolbarActions([
             BulkActionGroup::make([
                 DeleteBulkAction::make(),

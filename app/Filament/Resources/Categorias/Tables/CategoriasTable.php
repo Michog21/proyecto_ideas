@@ -51,6 +51,8 @@ class CategoriasTable
                 EditAction::make(),
                 ViewAction::make(),
             ])
+            ->recordUrl(null)
+            ->recordAction(null)
             ->toolbarActions([
                 BulkActionGroup::make([
                     //DeleteBulkAction::make(),
