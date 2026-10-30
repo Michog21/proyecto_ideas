@@ -135,27 +135,27 @@ class IdeaSeeder extends Seeder
             'categoria_id' => 4 
         ]);
 
-        // Categoría 9: Ideas relacionadas con comida
+        // Categoría 
         Idea::firstOrCreate([ 
             'titulo' => 'Directorio de productores agrícolas locales', 
             'descripcion' => 'Conecta restaurantes directamente con granjeros para comprar ingredientes frescos.', 
             'estado' => 'registrada', 
             'autor' => 'Julio', 
-            'categoria_id' => 9 
+            'categoria_id' => 3 
         ]);
         Idea::firstOrCreate([ 
             'titulo' => 'Generador de menús semanales económicos', 
             'descripcion' => 'Algoritmo que sugiere comidas basadas en los ingredientes en oferta del supermercado.', 
             'estado' => 'en revisión', 
             'autor' => 'Teresa', 
-            'categoria_id' => 9 
+            'categoria_id' => 4 
         ]);
         Idea::firstOrCreate([ 
             'titulo' => 'Sistema de reservas para comedores ocultos', 
             'descripcion' => 'Gestión de reservaciones y pagos para experiencias gastronómicas a puerta cerrada.', 
             'estado' => 'aprobada', 
             'autor' => 'Oscar', 
-            'categoria_id' => 9 
+            'categoria_id' => 1 
         ]);        
     } 
 } 

@@ -16,10 +16,24 @@ class StatsOverview extends StatsOverviewWidget
         $aprobadas = Idea::where('estado', 'aprobada')->count();
         $rechazadas = Idea::where('estado', 'Rechazada')->count();
 
+        $categorias = Categoria::withCount('ideas')->get();
+
+        $detalleCategorias = '';
+
+        foreach($categorias as $categoria){
+            $detalleCategorias .= $categoria->nombre . ': ' . $categoria->ideas_count . ' | ';
+        }
+
         return [
             Stat::make('Total de ideas', Idea::count())->icon('heroicon-o-light-bulb')
             ->description("Registradas: $registradas | " . "En revisión: $revision | " . "Aprobadas: $aprobadas | " . "Rechazadas: $rechazadas | "),
-            Stat::make('Total de categorias', Categoria::count())->icon('heroicon-o-tag'),
+
+            Stat::make('Total de categorias', Categoria::count())->icon('heroicon-o-tag')
+            ->description($detalleCategorias),
         ];
+    }
+
+    protected function getColumns(): int{
+        return 1;
     }
 }
