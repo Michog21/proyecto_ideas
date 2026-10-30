@@ -141,21 +141,21 @@ class IdeaSeeder extends Seeder
             'descripcion' => 'Conecta restaurantes directamente con granjeros para comprar ingredientes frescos.', 
             'estado' => 'registrada', 
             'autor' => 'Julio', 
-            'categoria_id' => 3 
+            'categoria_id' => 5 
         ]);
         Idea::firstOrCreate([ 
             'titulo' => 'Generador de menús semanales económicos', 
             'descripcion' => 'Algoritmo que sugiere comidas basadas en los ingredientes en oferta del supermercado.', 
             'estado' => 'en revisión', 
             'autor' => 'Teresa', 
-            'categoria_id' => 4 
+            'categoria_id' => 5
         ]);
         Idea::firstOrCreate([ 
             'titulo' => 'Sistema de reservas para comedores ocultos', 
             'descripcion' => 'Gestión de reservaciones y pagos para experiencias gastronómicas a puerta cerrada.', 
             'estado' => 'aprobada', 
             'autor' => 'Oscar', 
-            'categoria_id' => 1 
+            'categoria_id' => 5 
         ]);        
     } 
 } 

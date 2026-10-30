@@ -22,7 +22,7 @@ class IdeasGrafica extends ChartWidget
                 [
                     'label' => 'Estados',
                     'data' => [$registradas, $revision, $aprobadas, $rechazadas],
-                    'backgroundColor' => ['#FFF0F5', '#FFE4E1', '#FFFAFA', '#FFFFF0' ]
+                    'backgroundColor' => ['#DB7093', '#FFC0CB', '#F08080', '#C71585']
                 ],
             ],
             'labels' => [' Registrada', 'En revisión', 'Aprobada', 'Rechazada'],
