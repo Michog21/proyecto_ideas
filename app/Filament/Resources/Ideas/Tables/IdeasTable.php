@@ -83,6 +83,7 @@ public static function configure(Table $table): Table
             ForceDeleteAction::make(),
             
             Action::make('aprobar')
+                ->authorize('cambiarEstado')
                 ->label('Aprobar')
                 ->icon(Heroicon::HandThumbUp)
                 ->color('success')
@@ -102,6 +103,7 @@ public static function configure(Table $table): Table
                 ->visible(fn(Idea $record) => $record->estado !== 'aprobada'), 
                 
             Action::make('rechazar')
+                ->authorize('cambiarEstado')
                 ->label('Rechazar')
                 ->icon(Heroicon::HandThumbDown)
                 ->color('danger')
