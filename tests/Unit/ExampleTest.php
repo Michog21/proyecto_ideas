@@ -43,3 +43,12 @@ test('calcular correctamente un descuento profesor', function(){
     expect($resultado)->toEqual(200);
 
 });
+
+test('calcular diferentes descuentos', function($precio, $descuento, $esperado){
+    $resultado = calcularDescuento($precio, $descuento);
+    expect($resultado)->toEqual($esperado);
+})->with([
+    'descuento de 10%' => [200, 10, 180],
+    'descuento de 50%' => [200, 50, 100],
+    'sin descuento' => [200, 0, 200],
+]);
